@@ -6,25 +6,50 @@
   
   <script type='text/javascript' src='http://knockoutjs.com/downloads/knockout-3.0.0.js'></script>
   <script type='text/javascript' src='gmailencoder.js'></script>
+  
+  <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 
 </head>
 <body>
-  <p>Email: <input data-bind="value: email" /></p>
-  <p>Message: <input data-bind="value: message" /></p>
-  <br />
-  <button>Encode</button>
-  <br />
-  <p>Encoded Email:</p>
-  <p><strong data-bind="text: encodedEmail"></strong></p>
-  <br />
-  <p>Encoded Email: <input data-bind="value: cryptEmail" /></p>
-  <br />
-  <button>Decode</button>
-  <br />
-  <p>Decoded Message:</p>
-  <p><strong data-bind="text: decodedEmail"></strong></p>
-  
+  <div class="container">
+    <div class="header">
+      <h3 class="text-muted">Gmail Encoder</h3>
+    </div>
+    <div class="jumbotron">
+      <h1>Encode a Message!</h1>
+      <form class="form-signin" role="form">
+        <p>
+          <input type="email" data-bind="value: email" class="form-control" placeholder="Email address" required autofocus>
+          <input type="text" data-bind="value: message" class="form-control" placeholder="Secret Message" required>
+        </p>
+        
+        <p>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Encode</button>
+        </p>
+   
+        <h2 data-bind="text: encodedEmail"></h2>
+      </form>
+    </div>
+        
+    <div class="jumbotron">
+      <h1>Decode a Message!</h1>
+      <form class="form-signin" role="form">
+        <p>
+          <input type="email" data-bind="value: encodedEmail" class="form-control" placeholder="Email address" required autofocus>
+        </p>
+        
+        <p>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Decode</button>
+        </p>
+        
+        <h2 data-bind="text: decodedEmail"></h2>
+      </form>
+    </div>
+  </div>
+
 </body>
 
 
